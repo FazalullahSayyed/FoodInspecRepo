@@ -1,0 +1,93 @@
+.form-container {
+  max-width: 900px; /* Adjust the maximum width of the form */
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 30px; /* Add padding for spacious feel */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15); /* Add subtle shadow */
+  border-radius: 8px;
+  background-color: #ffffff; /* White background to improve contrast */
+}
+
+.logo-container {
+  margin-bottom: 20px; /* Spacing between the logo and heading */
+}
+
+.form-logo {
+  max-width: 450px; /* Limit logo size to keep it in proportion */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 1.5rem; /* Clear, larger title for better readability */
+  color: #30706C; /* Turquoise color for form title */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.half-width {
+  flex: 1 1 48%;
+  margin-right: 4%;
+}
+
+.half-width:last-child {
+  margin-right: 0;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+.label-gold {
+  color: #C5AD6F; /* Gold color for form labels */
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.mat-form-field .mat-label {
+  color: #C5AD6F; /* Gold color for form labels */
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-input-element {
+  color: #30706C; /* Turquoise color for user input text */
+}
+
+.btn-turquoise {
+  background-color: #30706C; /* Turquoise button background */
+  color: #ffffff; /* White text for button */
+  font-size: 1rem; /* Ensure all buttons have consistent font size */
+  padding: 10px 20px; /* Consistent padding for all buttons */
+  border-radius: 4px; /* Rounded corners for consistent button styling */
+}
+
+.btn-gold {
+  background-color: #C5AD6F; /* Gold button background */
+  color: #ffffff; /* White text for button */
+  font-size: 1rem; /* Ensure all buttons have consistent font size */
+  padding: 10px 20px; /* Consistent padding for all buttons */
+  border-radius: 4px; /* Rounded corners for consistent button styling */
+}
+
+.btn-white-text {
+  color: #ffffff !important; /* White text for buttons */
+}
+
+/* For smaller screens, make all fields full width */
+@media (max-width: 768px) {
+  .half-width {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,40 @@
+<div class="container mt-4 assigned-schools-container">
+  <div class="logo-container text-center mb-4">
+    <img src="assets/logo.png" alt="Majlis Ash-Shura Islamic Leadership Council Logo" class="form-logo">
+  </div>
+
+  <h3 class="text-center mb-4 form-title">Your Assigned Schools</h3>
+
+  <div *ngIf="isLoading" class="loading-indicator text-center mb-4">
+    <mat-progress-spinner mode="indeterminate" color="primary"></mat-progress-spinner>
+    <span>Loading schools...</span>
+  </div>
+
+  <div *ngIf="errorMessage" class="text-center error-message mb-4">
+    <mat-icon color="warn">error</mat-icon>
+    <strong>Error:</strong> {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!isLoading && schoolDetails && schoolDetails.length > 0">
+    <ul class="list-group">
+      <ng-container *ngFor="let school of schoolDetails">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="school-title">{{ school.schoolName }}</h5>
+            <p class="school-info"><strong>Address:</strong> {{ school.address }}</p>
+            <p class="school-info"><strong>Contact:</strong> {{ school.contactNumber }}</p>
+            <p class="school-info"><strong>Assign Date:</strong> {{ school.assignDate | date: 'mediumDate' }}</p>
+          </div>
+          <button mat-raised-button class="btn-turquoise btn-white-text" (click)="startInspection(school)">
+            Start Inspection
+          </button>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+
+  <div *ngIf="!isLoading && schoolDetails && schoolDetails.length === 0" class="text-center no-schools-message">
+    <mat-icon color="warn">info</mat-icon>
+    <p>No schools assigned to you at the moment.</p>
+  </div>
+</div>

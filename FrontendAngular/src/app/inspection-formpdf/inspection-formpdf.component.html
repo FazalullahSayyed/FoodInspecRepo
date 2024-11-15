@@ -1,0 +1,68 @@
+<!-- Inspection Summary Section -->
+<div id="pdf-summary-content" class="container" *ngIf="!isLoading && schoolDetails; else loadingOrError">
+    <h2 class="text-center text-success">Inspection Summary</h2>
+  
+    <!-- School Details -->
+    <h3>School Details</h3>
+    <p><strong>School Name:</strong> {{ schoolDetails.schoolName }}</p>
+    <p><strong>Address:</strong> {{ schoolDetails.address }}</p>
+    <p><strong>Contact Number:</strong> {{ schoolDetails.contactNumber }}</p>
+    <p><strong>Assign Date:</strong> {{ schoolDetails.assignDate | date: 'mediumDate' }}</p>
+  
+    <!-- General Information -->
+    <h3>General Information</h3>    
+    <p><strong>Type of Inspection:</strong> {{ inspectionData.type }}</p>
+    <p><strong>Status:</strong> {{ inspectionData.certificationStatus }}</p>
+    <p><strong>Notes:</strong> {{ inspectionData.notes }}</p>
+  
+    <!-- Check-in Questions -->
+    <h3>Check-in Questions</h3>
+    <p><strong>Front Desk Signature:</strong> {{ inspectionData.frontDeskSignature }}</p>
+    <p><strong>Kitchen Log:</strong> {{ inspectionData.kitchenLog }}</p>
+    <p><strong>Staff List:</strong> {{ inspectionData.staffList ? 'Yes' : 'No' }}</p>
+    <p><strong>DOH Inspection:</strong> {{ inspectionData.dohInspection ? 'Yes' : 'No' }}</p>
+    <p><strong>Halal Menu:</strong> {{ inspectionData.halalMenu ? 'Yes' : 'No' }}</p>
+    <p><strong>HACCP Inspection:</strong> {{ inspectionData.haccpInspection ? 'Yes' : 'No' }}</p>
+    <p><strong>Halal Approved:</strong> {{ inspectionData.halalApproved ? 'Yes' : 'No' }}</p>
+    <p><strong>Halal Certification:</strong> {{ inspectionData.halalCertification ? 'Yes' : 'No' }}</p>
+    <p><strong>Breakfast Start Time:</strong> {{ inspectionData.breakfastStart }}</p>
+    <p><strong>Breakfast End Time:</strong> {{ inspectionData.breakfastEnd }}</p>
+    <p><strong>Lunch Start Time:</strong> {{ inspectionData.lunchStart }}</p>
+    <p><strong>Lunch End Time:</strong> {{ inspectionData.lunchEnd }}</p>
+    <p><strong>Number of Students Served Breakfast:</strong> {{ inspectionData.studentsBreakfast }}</p>
+    <p><strong>Number of Students Served Lunch:</strong> {{ inspectionData.studentsLunch }}</p>
+    <p><strong>Total Number of Students Registered:</strong> {{ inspectionData.totalStudents }}</p>
+    <p><strong>Percentage of Students Consuming Halal:</strong> {{ inspectionData.halalPercentage }}%</p>
+    <p><strong>Additional Notes:</strong> {{ inspectionData.notes }}</p>
+  
+    <!-- Delivery Inspection -->
+    <h3>Delivery Inspection</h3>
+    <p><strong>Incident:</strong> {{ inspectionData.incident }}</p>
+    <p><strong>Remedy:</strong> {{ inspectionData.remedy }}</p>
+    <p><strong>Conclusion:</strong> {{ inspectionData.conclusion }}</p>
+  
+    <!-- Generate PDF Button -->
+    <div class="mt-4">
+      <button mat-raised-button color="primary" (click)="generatePDF()" style="margin-right: 10px;">
+        Generate PDF
+      </button>
+      <button type="button" class="btn btn-outline-secondary" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> Make Changes
+      </button>
+    </div>
+  </div>
+  
+  <!-- Loading or Error Template -->
+  <ng-template #loadingOrError>
+    <div class="text-center mt-5">
+      <div *ngIf="isLoading">
+        <p>Loading school details...</p>
+        <!-- You can add a spinner here if desired -->
+      </div>
+      <div *ngIf="!isLoading && errorMessage">
+        <p class="text-danger">{{ errorMessage }}</p>
+        <button class="btn btn-primary" (click)="goBack()">Go Back</button>
+      </div>
+    </div>
+  </ng-template>
+  

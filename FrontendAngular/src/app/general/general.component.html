@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="logo-container text-center">
+    <img src="assets/logo.png" alt="Majlis Ash-Shura Logo" class="form-logo">
+  </div>
+
+  <h1 class="form-title">General</h1>
+
+  <form [formGroup]="inspectionForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <p class="field-label">Type of Inspection: DO NOT use this form for Initial Certification or Re-Certification</p>
+      <mat-radio-group aria-label="Select Type of Inspection" formControlName="type" class="radio-group-vertical">
+        <mat-radio-button value="unannounced" color="primary">Unannounced</mat-radio-button>
+        <mat-radio-button value="remediation" color="primary">Remediation</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <!-- Certification Status Field -->
+    <div class="form-group">
+      <p class="field-label">Inspector Status:</p>
+      <mat-radio-group aria-label="Select Certification Status" formControlName="certificationStatus" class="radio-group-vertical"> <!-- Updated to certificationStatus -->
+        <mat-radio-button value="certified" color="primary">Certified Inspector</mat-radio-button>
+        <mat-radio-button value="trainee" color="primary">Trainee</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label class="label-primary">Notes:</mat-label>
+      <textarea matInput formControlName="notes"></textarea>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button type="button" class="btn-turquoise btn-white-text" (click)="onBack()">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+      <button mat-raised-button class="btn-gold btn-white-text" type="submit">Save</button>
+      <button mat-raised-button class="btn-turquoise btn-white-text" type="button" (click)="onNext()">Next</button>
+    </div>
+  </form>
+</div>

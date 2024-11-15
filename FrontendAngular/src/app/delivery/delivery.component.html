@@ -1,0 +1,68 @@
+<div id="pdf-content">
+  <div class="container card shadow-sm p-4">
+    <!-- Logo Section (Placeholder) -->
+    <div class="logo-container text-center mb-3">
+      <img src="assets/logo.png" alt="Logo" class="form-logo" />
+    </div>
+    
+    <h2 class="text-center text-turquoise">PHASE 1: Delivery Inspection</h2>
+    <p class="text-muted text-center">
+      This is the very first phase to check and should be briskly done so that you can move on to the next phase.
+    </p>
+
+    <form [formGroup]="deliveryForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Incident Field -->
+      <div class="form-group mb-3">
+        <label for="incident" class="form-label">Incident:</label>
+        <textarea class="form-control" id="incident" formControlName="incident" rows="4" required></textarea>
+      </div>
+
+      <!-- Remedy Field -->
+      <div class="form-group mb-3">
+        <label for="remedy" class="form-label">Remedy:</label>
+        <textarea class="form-control" id="remedy" formControlName="remedy" rows="4" required></textarea>
+      </div>
+
+      <!-- Conclusion Field -->
+      <div class="form-group mb-3">
+        <label for="conclusion" class="form-label">Conclusion:</label>
+        <textarea class="form-control" id="conclusion" formControlName="conclusion" rows="4" required></textarea>
+      </div>
+
+      <!-- File Upload Section -->
+      <div class="form-group mb-3">
+        <label for="upload" class="form-label">Upload Photos (Multiple files allowed)</label>
+        <div class="file-upload-area" (drop)="onFileDrop($event)" (dragover)="onDragOver($event)">
+          <p class="text-muted">Drag and drop files here or</p>
+          <input type="file" id="upload" (change)="onFileSelected($event)" multiple hidden />
+          <button type="button" class="btn btn-outline-primary" (click)="triggerFileSelect()">Browse Files</button>
+        </div>
+        <div *ngIf="selectedFiles.length > 0" class="mt-2">
+          <p>Selected Files:</p>
+          <ul>
+            <li *ngFor="let file of selectedFiles">{{ file.name }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Uploaded Files Section (Show names only) -->
+      <div *ngIf="uploadedFileNames.length > 0" class="mt-3">
+        <p class="text-turquoise">Uploaded Files:</p>
+        <ul>
+          <li *ngFor="let fileName of uploadedFileNames">{{ fileName }} successfully uploaded!</li>
+        </ul>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-outline-secondary" (click)="goBack()">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <button type="submit" class="btn btn-gold" [disabled]="deliveryForm.invalid">
+          <i class="fas fa-save"></i> Submit & Generate PDF
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

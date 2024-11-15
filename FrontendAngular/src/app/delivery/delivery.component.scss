@@ -1,0 +1,78 @@
+ /* Colors */
+ .text-turquoise {
+    color: #30706F; /* Turquoise color for headings */
+  }
+  
+  .btn-gold {
+    background-color: #C5AD6F;
+    color: #ffffff;
+    border: none;
+  }
+
+  /* Container styling */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .card {
+    border-radius: 15px;
+    background-color: #ffffff;
+  }
+
+  .form-control {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .text-center {
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    min-width: 120px;
+    font-size: 16px;
+  }
+
+  .btn i {
+    margin-right: 5px;
+  }
+
+  .file-upload-area {
+    border: 2px dashed #d0d0d0;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .file-upload-area:hover {
+    background-color: #f9f9f9;
+  }
+
+  .btn-outline-primary {
+    color: #30706F;
+    border-color: #30706F;
+  }
+
+  .btn-outline-primary:hover {
+    background-color: #30706F;
+    color: #fff;
+  }
+
+  /* Logo styling */
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-logo {
+    max-width: 450px;
+    height: auto;
+  }

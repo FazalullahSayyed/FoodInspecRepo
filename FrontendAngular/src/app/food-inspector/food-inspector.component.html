@@ -1,0 +1,61 @@
+<div class="form-container mt-5 mb-5 shadow-lg rounded">
+  <!-- Logo Section -->
+  <div class="logo-container text-center">
+    <img src="assets/logo.png" alt="Majlis Ash-Shura Islamic Leadership Council Logo" class="form-logo">
+  </div>
+
+  <!-- Heading Section -->
+  <h2 class="text-center mb-4 form-title">Create Food Inspector</h2>
+
+  <form [formGroup]="inspectorForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <!-- Inspector Name -->
+      <mat-form-field class="full-width">
+        <mat-label class="label-gold">Inspector Name</mat-label>
+        <input matInput formControlName="name" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- Inspector Email -->
+      <mat-form-field class="full-width">
+        <mat-label class="label-gold">Inspector Email</mat-label>
+        <input matInput formControlName="email" type="email" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- Location -->
+      <mat-form-field class="half-width">
+        <mat-label class="label-gold">Location</mat-label>
+        <input matInput formControlName="location" required />
+      </mat-form-field>
+
+      <!-- Phone Number -->
+      <mat-form-field class="half-width">
+        <mat-label class="label-gold">Phone Number</mat-label>
+        <input matInput formControlName="phoneNumber" type="tel" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- Role -->
+      <mat-form-field class="full-width">
+        <mat-label class="label-gold">Role</mat-label>
+        <mat-select formControlName="role" required>
+          <mat-option value="USER">USER</mat-option>
+          <mat-option value="ADMIN">ADMIN</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row buttons">
+      <!-- Save Button -->
+      <button mat-raised-button class="btn-gold btn-white-text" type="submit" [disabled]="inspectorForm.invalid">
+        Save
+      </button>&nbsp;
+      <!-- Cancel Button -->
+      <button mat-raised-button class="btn-turquoise btn-white-text" type="button" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

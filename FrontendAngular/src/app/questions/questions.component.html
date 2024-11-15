@@ -1,0 +1,111 @@
+<div class="container">
+  <!-- Logo Section -->
+  <div class="logo-container text-center">
+    <img src="assets/logo.png" alt="Majlis Ash-Shura Logo" class="form-logo">
+  </div>
+
+  <!-- Heading Section -->
+  <h2 class="form-title">Check-in Questions</h2>
+
+  <form [formGroup]="checkInForm" (ngSubmit)="onSubmit()">
+    <!-- Signature at Front Desk -->
+    <mat-card class="form-group">
+      <mat-card-title>Were you asked to sign your signature at the Front Desk sign-in?</mat-card-title>
+      <mat-radio-group formControlName="frontDeskSignature" class="radio-group">
+        <mat-radio-button value="yes" color="primary">Yes</mat-radio-button>
+        <mat-radio-button value="no" color="primary">No</mat-radio-button>
+      </mat-radio-group>
+    </mat-card>
+
+    <!-- Kitchen's Visitor Log Book -->
+    <mat-card class="form-group">
+      <mat-card-title>Did you sign into the Kitchen's Visitor Log book?</mat-card-title>
+      <mat-radio-group formControlName="kitchenLog" class="radio-group">
+        <mat-radio-button value="yes" color="primary">Yes</mat-radio-button>
+        <mat-radio-button value="no" color="primary">No</mat-radio-button>
+      </mat-radio-group>
+    </mat-card>
+
+
+    <!-- Checkbox Group -->
+    <mat-card class="form-group checkbox-group">
+      <mat-card-title >
+        <mat-card-title >  Documents and Information to Ask from the Manager or Cook.</mat-card-title>
+        The following are documents and information to be requested from the Manager (if present) or Cook.
+      </mat-card-title>
+      <mat-checkbox formControlName="staffList" color="primary">Staff list of all current employees</mat-checkbox>
+      <mat-checkbox formControlName="dohInspection" color="primary">DOH inspection</mat-checkbox>
+      <mat-checkbox formControlName="halalMenu" color="primary">Halal menu list</mat-checkbox>
+      <mat-checkbox formControlName="haccpInspection" color="primary">HACCP inspection</mat-checkbox>
+      <mat-checkbox formControlName="halalApproved" color="primary">Latest Halal approved items list (ensure it’s posted)</mat-checkbox>
+      <mat-checkbox formControlName="halalCertification" color="primary">Halal Certification (ensure it’s posted)</mat-checkbox>
+    </mat-card>
+
+    <!-- Meal Times Grouped Together -->
+    <div class="meal-time-group">
+      <mat-card class="form-group">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Breakfast Start Time</mat-label>
+          <input matInput [ngxTimepicker]="breakfastStartPicker" formControlName="breakfastStart" readonly>
+          <ngx-material-timepicker #breakfastStartPicker></ngx-material-timepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Breakfast End Time</mat-label>
+          <input matInput [ngxTimepicker]="breakfastEndPicker" formControlName="breakfastEnd" readonly>
+          <ngx-material-timepicker #breakfastEndPicker></ngx-material-timepicker>
+        </mat-form-field>
+      </mat-card>
+      <mat-card class="form-group">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Lunch Start Time</mat-label>
+          <input matInput [ngxTimepicker]="lunchStartPicker" formControlName="lunchStart" readonly>
+          <ngx-material-timepicker #lunchStartPicker></ngx-material-timepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Lunch End Time</mat-label>
+          <input matInput [ngxTimepicker]="lunchEndPicker" formControlName="lunchEnd" readonly>
+          <ngx-material-timepicker #lunchEndPicker></ngx-material-timepicker>
+        </mat-form-field>
+      </mat-card>
+    </div>
+
+    <!-- Student Counts and Halal Percentage -->
+    <mat-card class="form-group">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Number of students served breakfast</mat-label>
+        <input matInput type="number" formControlName="studentsBreakfast">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Number of students served lunch</mat-label>
+        <input matInput type="number" formControlName="studentsLunch">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Total number of students registered</mat-label>
+        <input matInput type="number" formControlName="totalStudents">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Percentage of students consuming Halal</mat-label>
+        <input matInput type="number" formControlName="halalPercentage" min="1" max="100">
+      </mat-form-field>
+    </mat-card>
+
+    <!-- Additional Notes -->
+    <mat-card class="form-group">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Additional Notes</mat-label>
+        <textarea matInput rows="4" formControlName="notes"></textarea>
+      </mat-form-field>
+    </mat-card>
+
+    <!-- Form Actions -->
+    <div class="button-group">
+      <button type="button" class="btn-turquoise btn-white-text" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+      <button type="submit" class="btn-gold btn-white-text">
+        <i class="fas fa-save"></i> Save
+      </button> 
+      <button mat-raised-button class="btn-turquoise btn-white-text" type="button" (click)="goNext()">Next</button>
+    </div>
+  </form>
+</div>

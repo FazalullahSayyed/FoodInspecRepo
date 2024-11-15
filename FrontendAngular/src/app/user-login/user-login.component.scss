@@ -1,0 +1,113 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f6f9; /* Light grey background for better contrast */
+}
+
+.login-form {
+  max-width: 900px; /* Increased width for a more prominent look */
+  width: 100%;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px; /* Larger radius for a softer look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Pronounced shadow for elevated appearance */
+}
+
+.logo-container {
+  margin-bottom: 25px; /* More space between the logo and heading */
+}
+
+.form-logo {
+  max-width: 450px; /* Limit logo size for more professional appearance */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 1.75rem; /* Larger, clear title for visibility */
+  color: #30706C; /* Turquoise color for the title */
+}
+
+.label-gold {
+  color: #C5AD6F !important; /* Gold color for form labels */
+}
+
+/* Make input fields larger and more prominent */
+.large-input .mat-form-field-flex {
+  height: 60px; /* Increase height of input fields */
+  align-items: center;
+}
+
+.large-input .mat-input-element {
+  font-size: 1.25rem; /* Increase font size for input text */
+  padding: 10px 15px; /* Add more padding inside the input fields */
+}
+
+.large-label {
+  font-size: 1.25rem !important; /* Increase label size for better visibility */
+}
+
+.centered-input {
+  width: 80%; /* Set a smaller width for the input fields */
+  margin: 0 auto; /* Center the input fields horizontally */
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-around; /* Space buttons evenly for better alignment */
+  align-items: center;
+  gap: 30px; /* More space between buttons */
+  margin-top: 25px; /* Space above buttons for visual separation */
+}
+
+.button-width {
+  min-width: 140px; /* Ensure buttons are the same width for uniformity */
+}
+
+.btn-turquoise,
+.btn-gold {
+  font-size: 1.25rem; /* Increase button font size for better readability */
+  padding: 15px 30px; /* Increased padding for better clickability */
+  border-radius: 8px; /* Rounded corners for modern, professional button styling */
+  text-transform: uppercase; /* Make button text uppercase for emphasis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for button elevation */
+}
+
+/* Specific styles to enforce color and override Material defaults */
+button.btn-gold {
+  background-color: #C5AD6F !important; /* Gold button background */
+  color: #ffffff !important; /* White text for button */
+}
+
+button.btn-turquoise {
+  background-color: #30706C !important; /* Turquoise button background */
+  color: #ffffff !important; /* White text for button */
+}
+
+a.btn-turquoise {
+  text-decoration: none; /* Remove underline for button links */
+  display: inline-block; /* Treat the link as a button */
+  background-color: #30706C !important; /* Turquoise button background */
+  color: #ffffff !important; /* White text for button */
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for button elevation */
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.text-danger {
+  color: #ff0000; /* Red for error messages to make them stand out */
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}

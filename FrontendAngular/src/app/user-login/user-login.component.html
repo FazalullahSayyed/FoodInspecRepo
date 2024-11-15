@@ -1,0 +1,48 @@
+<div class="login-container">
+  <div class="container col-md-6 col-lg-5 login-form shadow-lg rounded">
+    <!-- Logo Section -->
+    <div class="logo-container text-center mb-4">
+      <img src="assets/logo.png" alt="Majlis Ash-Shura Islamic Leadership Council Logo" class="form-logo">
+    </div>
+
+    <!-- Heading Section -->
+    <h1 class="text-center mb-5 form-title">User Login</h1>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+      <div class="form-group text-center mb-4">
+        <!-- Email Field -->
+        <mat-form-field class="centered-input large-input" appearance="outline">
+          <mat-label class="label-gold large-label">Email</mat-label>
+          <input matInput formControlName="email" type="email" placeholder="Enter your email" required />
+          <mat-hint class="hint-text">We'll never share your email with anyone else.</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group text-center mb-4">
+        <!-- Password Field -->
+        <mat-form-field class="centered-input large-input" appearance="outline">
+          <mat-label class="label-gold large-label">Password</mat-label>
+          <input matInput formControlName="password" type="password" placeholder="Enter your password" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Buttons Row -->
+      <div class="button-row text-center mt-5">
+        <!-- Submit Button -->
+        <button mat-raised-button class="btn-gold btn-white-text button-width" type="submit" [disabled]="isLoading">Login</button>
+
+        <!-- Register Button -->
+        <a routerLink="/register" mat-raised-button class="btn-turquoise btn-white-text button-width">Register</a>
+      </div>
+
+      <!-- Loading Spinner -->
+      <div *ngIf="isLoading" class="loading-spinner mt-4 text-center">
+        <mat-progress-spinner mode="indeterminate" diameter="30" color="primary"></mat-progress-spinner>
+        <span>Logging in...</span>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="text-danger mt-4 text-center">{{ errorMessage }}</div>
+    </form>
+  </div>
+</div>

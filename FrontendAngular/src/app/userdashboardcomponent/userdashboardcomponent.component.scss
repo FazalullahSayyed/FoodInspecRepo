@@ -1,0 +1,62 @@
+.assigned-schools-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .logo-container {
+    margin-bottom: 25px;
+  }
+  
+  .form-logo {
+    max-width: 450px;
+    height: auto;
+  }
+  
+  .form-title {
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: #30706C; /* Turquoise color */
+  }
+  
+  .loading-indicator {
+    color: #30706C; /* Turquoise color */
+  }
+  
+  .error-message {
+    color: #C5AD6F; /* Gold color */
+  }
+  
+  .school-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .school-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #30706C; /* Turquoise color */
+  }
+  
+  .school-info {
+    font-size: 1rem;
+    color: #C5AD6F; /* Gold color */
+  }
+  
+  .no-schools-message {
+    font-size: 1.2rem;
+    color: #30706C; /* Turquoise color */
+  }
+  
+  .btn-turquoise {
+    background-color: #30706C !important;
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -1,0 +1,98 @@
+.form-container {
+  max-width: 900px; /* Increased width for a more spacious look */
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 30px; /* Add padding for spacious feel */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15); /* Add more defined shadow */
+  border-radius: 8px; /* Smooth rounded corners */
+  background-color: #ffffff; /* Clean white background */
+}
+
+.logo-container {
+  margin-bottom: 20px; /* Spacing between the logo and heading */
+}
+
+.form-logo {
+  max-width: 450px; /* Limit logo size to keep it in proportion */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 1.5rem; /* Clear, larger title for better readability */
+  color: #30706C; /* Turquoise for title text */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* More spacing between rows for readability */
+}
+
+.col-lg-4,
+.col-md-12 {
+  flex: 1 1 32%; /* Control field width for different screen sizes */
+  margin-right: 2%;
+}
+
+.col-lg-4:last-child {
+  margin-right: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.label-gold {
+  color: #C5AD6F; /* Gold color for form labels */
+}
+
+.header-turquoise {
+  color: #30706C; /* Turquoise for table headers */
+}
+
+.btn-turquoise {
+  background-color: #30706C; /* Turquoise button background */
+  color: #ffffff; /* White text for button */
+  font-size: 1rem; /* Ensure all buttons have consistent font size */
+  padding: 8px 16px; /* Consistent padding for all buttons */
+  border-radius: 4px; /* Rounded corners for consistent button styling */
+}
+
+.btn-gold {
+  background-color: #C5AD6F; /* Gold button background */
+  color: #ffffff; /* White text for button */
+  font-size: 1rem; /* Ensure all buttons have consistent font size */
+  padding: 8px 16px; /* Consistent padding for all buttons */
+  border-radius: 4px; /* Rounded corners for consistent button styling */
+}
+
+.btn-white-text {
+  color: #ffffff !important; /* White text for better contrast on buttons */
+}
+
+.buttons {
+  display: flex;
+  justify-content: center; /* Center-align buttons for a professional look */
+  gap: 20px; /* Uniform spacing between buttons */
+}
+
+.table-container {
+  width: 100%;
+  margin-top: 30px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+.editing-row {
+  background-color: #f7f7f7; /* Light grey background for the editing row */
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-lg-4 {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+}

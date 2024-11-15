@@ -1,0 +1,186 @@
+/* Card Container */
+.certification-card {
+  max-width: 100%;
+  width: 100%;
+  background-color: #ffffff; /* Consistent white background */
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-container {
+  margin-bottom: 10px;
+}
+
+.card-logo {
+  max-width: 450px; /* Adjusted for appropriate size */
+  width: 100%;
+  height: auto;
+}
+
+.title-container {
+  text-align: center;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0;
+  color: #30706C; /* Turquoise color for title */
+}
+
+/* Buttons Container */
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Space between buttons */
+  padding: 16px 0; /* Vertical padding for spacing */
+  /* Removed border-bottom to reduce visual clutter */
+}
+
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-container button {
+    width: 100%;
+  }
+}
+
+/* Button Styles */
+.action-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff; /* White text for buttons */
+}
+
+.btn-turquoise {
+  background-color: #30706C; /* Turquoise button */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-turquoise:hover {
+  background-color: #245a58; /* Darker turquoise on hover */
+}
+
+.btn-gold {
+  background-color: #C5AD6F; /* Gold button */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: #a6995c; /* Darker gold on hover */
+}
+
+/* Inspections List */
+.inspections-header {
+  margin-bottom: 16px;
+}
+
+.inspections-title {
+  font-size: 1.5em;
+  color: #30706C; /* Turquoise color to match header */
+  margin: 0;
+}
+
+.inspection-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inspection-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.inspection-details {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.inspection-details span {
+  display: flex;
+  align-items: center;
+}
+
+.inspection-item button.btn-gold {
+  /* Ensure Download Report buttons have the same styling as other gold buttons */
+  background-color: #C5AD6F; /* Gold button */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+}
+
+/* No Inspections Message */
+.no-inspections-message {
+  text-align: center;
+  font-size: 1.1em;
+  color: #777;
+  padding: 20px 0;
+}
+
+/* Progress Bar */
+.progress-content {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #C5AD6F; /* Gold color for progress bar */
+}
+
+/* Footer */
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-logo {
+    max-width: 60px; /* Adjusted for smaller screens */
+  }
+
+  .card-title {
+    font-size: 1.3em;
+  }
+
+  .action-button {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  .inspection-details {
+    gap: 10px;
+  }
+
+  .inspections-title {
+    font-size: 1.3em;
+  }
+}

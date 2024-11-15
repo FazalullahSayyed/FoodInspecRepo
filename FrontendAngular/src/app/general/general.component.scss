@@ -1,0 +1,100 @@
+/* Container styling */
+.container {
+  padding: 20px;
+  margin: auto;
+  max-width: 900px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Logo container and image styling */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-logo {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+}
+
+/* Form title styling */
+.form-title {
+  font-weight: bold;
+  font-size: 1.8em;
+  text-align: center;
+  color: #30706C;
+  margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.field-label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Vertically arranged radio group styling */
+.radio-group-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Full width input styling */
+.full-width {
+  width: 100%;
+}
+
+/* Button group styling */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+/* Button styling */
+.btn-turquoise {
+  background-color: #30706C;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-gold {
+  background-color: #C5AD6F;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-white-text {
+  color: #ffffff !important;
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    margin-bottom: 10px;
+  }
+}

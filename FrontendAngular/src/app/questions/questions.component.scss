@@ -1,0 +1,127 @@
+/* Container styling */
+.container {
+  padding: 20px;
+  margin: auto;
+  max-width: 900px;
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Logo container and image styling */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-logo {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+}
+
+/* Form title styling */
+.form-title {
+  font-weight: bold;
+  font-size: 1.8em;
+  text-align: center;
+  color: #30706C; /* Turquoise color for heading */
+  margin-bottom: 20px;
+}
+
+/* Card and form group styling */
+.form-group {
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.card-subtitle {
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Turquoise color for radio button */
+.mat-radio-button.mat-accent .mat-radio-outer-circle,
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  border-color: #30706C !important; /* Turquoise color for radio button border */
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-inner-circle {
+  background-color: #30706C !important; /* Turquoise color for checked radio button */
+}
+
+.mat-radio-button .mat-radio-label-content {
+  color: #30706C !important; /* Turquoise color for radio button label text */
+}
+
+/* Turquoise color for checkbox */
+.mat-checkbox .mat-checkbox-frame {
+  border-color: #30706C !important; /* Turquoise color for checkbox border */
+}
+
+.mat-checkbox-checked .mat-checkbox-background,
+.mat-checkbox-indeterminate .mat-checkbox-background {
+  background-color: #30706C !important; /* Turquoise color for checked checkbox */
+  border-color: #30706C !important; /* Border color when checked */
+}
+
+.mat-checkbox-label .mat-checkbox-label-content {
+  color: #30706C !important; /* Turquoise color for checkbox label text */
+}
+
+/* Full width input styling */
+.full-width {
+  width: 100%;
+}
+
+/* Button group styling */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+/* Button styling */
+.btn-turquoise {
+  background-color: #30706C; /* Turquoise button background */
+  color: #ffffff; /* White text for button */
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-gold {
+  background-color: #C5AD6F; /* Gold button background */
+  color: #ffffff; /* White text for button */
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-white-text {
+  color: #ffffff !important; /* Ensures white text on buttons */
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 600px) {
+  .meal-time-group {
+    flex-direction: column;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .button-group button {
+    margin-bottom: 10px;
+  }
+}

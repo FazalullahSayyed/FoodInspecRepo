@@ -1,0 +1,70 @@
+<!-- Toolbar for Admin Users -->
+<mat-toolbar *ngIf="authService.isLoggedIn() && authService.isAdmin()" class="app-toolbar">
+  <!-- Logo and Application Title -->
+  <button routerLink="/admin-dashboard" mat-button class="toolbar-logo">
+    <span class="toolbar-title">Admin Dashboard</span>
+  </button>
+  
+  <!-- Spacer to Push Navigation to the Right -->
+  <span class="example-spacer"></span>
+
+  <!-- Admin Navigation Links -->
+  <a routerLink="/dashboard">
+    <button mat-raised-button class="btn-gold">
+      <mat-icon>dashboard</mat-icon> Dashboard
+    </button>
+  </a>&nbsp;
+  
+  <a routerLink="/register-inspector">
+    <button mat-raised-button class="btn-gold">
+      <mat-icon>supervisor_account</mat-icon> Manage Food Inspector
+    </button>
+  </a>&nbsp;
+  
+  <a routerLink="/inspector">
+    <button mat-raised-button class="btn-gold">
+      <mat-icon>school</mat-icon> Manage School Institutes
+    </button>
+  </a>&nbsp;
+
+  <a routerLink="/mappings">
+    <button mat-raised-button class="btn-gold">
+      <mat-icon>link</mat-icon> Map Food Inspector
+    </button>
+  </a>&nbsp;
+
+  <button mat-raised-button class="btn-turquoise" (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon> Logout
+  </button>
+</mat-toolbar>
+
+<!-- Toolbar for Regular Users -->
+<mat-toolbar *ngIf="authService.isLoggedIn() && !authService.isAdmin()" class="app-toolbar">
+  <!-- Logo and Application Title -->
+  <button routerLink="/user-dashboard" mat-button class="toolbar-logo">
+    <span class="toolbar-title">User Dashboard</span>
+  </button>
+  
+  <!-- Spacer to Push Navigation to the Right -->
+  <span class="example-spacer"></span>
+
+  <!-- User Navigation Links -->
+  <a routerLink="/user-profile">
+    <button mat-raised-button class="btn-gold">
+      <mat-icon>person</mat-icon> Profile
+    </button>
+  </a>&nbsp;
+
+  <!-- Additional user-specific links can be added here -->
+
+  <button mat-raised-button class="btn-turquoise" (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon> Logout
+  </button>
+</mat-toolbar>
+
+<!-- Toolbar for Non-Logged In Users -->
+<mat-toolbar *ngIf="!authService.isLoggedIn()" class="app-toolbar">
+  <!-- Placeholder for guest navigation -->
+</mat-toolbar>
+
+<router-outlet></router-outlet>

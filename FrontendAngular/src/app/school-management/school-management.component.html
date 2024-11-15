@@ -1,0 +1,90 @@
+<div class="form-container mt-5 mb-5 shadow-lg rounded">
+  <!-- Logo Section -->
+  <div class="logo-container text-center">
+    <img src="assets/logo.png" alt="Majlis Ash-Shura Islamic Leadership Council Logo" class="form-logo">
+  </div>
+
+  <!-- Heading Section -->
+  <h2 class="text-center mb-4 form-title">{{ isEditMode ? 'Edit School/Institute' : 'Create School/Institute' }}</h2>
+
+  <form [formGroup]="schoolForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <!-- School/Institute Name -->
+      <mat-form-field class="full-width">
+        <mat-label class="label-gold">School/Institute Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter school or institute name" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- Address -->
+      <mat-form-field class="full-width">
+        <mat-label class="label-gold">Address</mat-label>
+        <input matInput formControlName="address" placeholder="Enter address" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- Contact Number -->
+      <mat-form-field class="half-width">
+        <mat-label class="label-gold">Contact Number</mat-label>
+        <input matInput formControlName="contactNumber" type="tel" placeholder="Enter contact number" required />
+      </mat-form-field>
+
+      <!-- Email Address -->
+      <mat-form-field class="half-width">
+        <mat-label class="label-gold">Email Address</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="Enter email address" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- Type Dropdown -->
+      <mat-form-field class="half-width">
+        <mat-label class="label-gold">Type</mat-label>
+        <mat-select formControlName="type" required>
+          <mat-option value="School">School</mat-option>
+          <mat-option value="College">College</mat-option>
+          <mat-option value="University">University</mat-option>
+          <mat-option value="Training Institute">Training Institute</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Principal/Headmaster Name -->
+      <mat-form-field class="half-width">
+        <mat-label class="label-gold">Principal/Headmaster Name</mat-label>
+        <input matInput formControlName="principalName" placeholder="Enter principal name" required />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- Established Year -->
+      <mat-form-field class="half-width">
+        <mat-label class="label-gold">Established Year</mat-label>
+        <input matInput formControlName="establishedYear" type="number" placeholder="Enter established year" required />
+      </mat-form-field>
+
+      <!-- Accreditation -->
+      <mat-form-field class="half-width">
+        <mat-label class="label-gold">Accreditation Details</mat-label>
+        <input matInput formControlName="accreditation" placeholder="Enter accreditation details" />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <!-- Notes -->
+      <mat-form-field class="full-width">
+        <mat-label class="label-gold">Notes/Comments</mat-label>
+        <textarea matInput formControlName="notes" placeholder="Add any notes or comments"></textarea>
+      </mat-form-field>
+    </div>
+
+    <!-- Buttons -->
+    <div class="row buttons">
+      <button mat-raised-button class="btn-gold btn-white-text" type="submit" [disabled]="schoolForm.invalid">
+        {{ isEditMode ? 'Update' : 'Save' }}
+      </button>&nbsp;
+      <button mat-raised-button class="btn-turquoise btn-white-text" type="button" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

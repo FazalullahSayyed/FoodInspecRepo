@@ -1,0 +1,57 @@
+<mat-card class="certification-card">
+  <!-- Header -->
+  <mat-card-header class="header-container">
+    <div class="logo-container text-center">
+      <img src="assets/logo.png" alt="Majlis Ash-Shura Logo" class="card-logo">
+    </div>
+    <div class="title-container text-center">
+      <mat-card-title class="card-title">
+        HICCP Unannounced Certification Checklist for Department of Education
+      </mat-card-title>
+    </div>
+  </mat-card-header>
+
+  <!-- Buttons Above Inspections -->
+  <div class="button-container">
+    <button mat-raised-button class="btn-turquoise action-button" (click)="onSave()">
+      Start New Inspection
+    </button>
+    <button mat-raised-button class="btn-gold action-button" (click)="onNext()">
+      Next
+    </button>
+  </div>
+
+  <!-- Inspections List -->
+  <mat-card-content *ngIf="inspections.length > 0; else noInspections">
+    <div class="inspections-header">
+      <h2 class="inspections-title">All Inspections</h2>
+    </div>
+    <ul class="inspection-list">
+      <li *ngFor="let inspection of inspections" class="inspection-item">
+        <div class="inspection-details">
+          <span><strong>ID:</strong> <strong>{{ inspection.id }}</strong></span>
+          <span><strong>Assign Date:</strong> <strong>{{ inspection.assignDate | date: 'mediumDate' }}</strong></span>
+          <span><strong>Status: Submitted</strong></span>
+        </div>
+        <button mat-raised-button class="btn-gold action-button" (click)="generateReport(inspection)">
+          Download Report
+        </button>
+      </li>
+    </ul>
+  </mat-card-content>
+
+  <!-- No Inspections Template -->
+  <ng-template #noInspections>
+    <p class="no-inspections-message">No active inspections available or inspection submitted successfully.</p>
+  </ng-template>
+
+  <!-- Progress Bar -->
+  <mat-card-content class="progress-content">
+    <mat-progress-bar mode="determinate" value="2" class="progress-bar"></mat-progress-bar>
+  </mat-card-content>
+
+  <!-- Footer -->
+  <mat-card-footer *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </mat-card-footer>
+</mat-card>

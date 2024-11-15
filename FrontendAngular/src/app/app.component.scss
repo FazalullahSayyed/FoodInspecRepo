@@ -1,0 +1,50 @@
+.app-toolbar {
+  background-color: #30706C; /* Turquoise color for toolbar */
+  color: #C5AD6F; /* Gold color for text */
+  height: 80px; /* Increase the height of the navbar (default is 64px) */
+  line-height: 80px; /* Center-align content vertically within the toolbar */
+}
+
+.toolbar-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.toolbar-title {
+  font-size: 1.1rem; /* Increase the size of the title text for prominence */
+  font-weight: bold;
+  color: #C5AD6F; /* Gold color for title to make it stand out against the turquoise background */
+  margin-left: 2px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar button,
+.mat-toolbar a button {
+  font-size: 1rem; /* Increase button font size slightly for better visibility */
+  padding: 0 16px;
+  color: #C5AD6F; /* Gold color for button text to maintain consistency with the scheme */
+}
+
+.btn-gold {
+  background-color: #C5AD6F; /* Gold button background */
+  color: #30706C; /* Turquoise text for contrast against the gold background */
+}
+
+.btn-turquoise {
+  background-color: #30706C; /* Turquoise button background */
+  color: #C5AD6F; /* Gold text for contrast against the turquoise background */
+}
+
+@media (max-width: 768px) {
+  .app-toolbar {
+    height: 70px; /* Reduce slightly for smaller devices */
+    line-height: 70px;
+  }
+  .toolbar-title {
+    font-size: 1.4rem; /* Slightly smaller font size for the title on smaller devices */
+  }
+}

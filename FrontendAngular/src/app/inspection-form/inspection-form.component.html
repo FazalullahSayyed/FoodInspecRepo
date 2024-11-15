@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Add New Inspection</h2>
+  
+    <form [formGroup]="inspectionForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <!-- Inspection Date -->
+        <div class="col-md-4 mb-3">
+          <mat-form-field class="full-width">
+            <mat-label>Inspection Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="inspectionDate" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+  
+        <!-- Inspector Name -->
+        <div class="col-md-4 mb-3">
+          <mat-form-field class="full-width">
+            <mat-label>Inspector Name</mat-label>
+            <input matInput formControlName="inspectorName" required>
+          </mat-form-field>
+        </div>
+  
+        <!-- Inspection Result -->
+        <div class="col-md-4 mb-3">
+          <mat-form-field class="full-width">
+            <mat-label>Inspection Result</mat-label>
+            <input matInput formControlName="inspectionResult" required>
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="text-center mb-4">
+        <button mat-raised-button color="primary" type="submit" [disabled]="inspectionForm.invalid">Save Inspection</button>&nbsp;
+        <button mat-raised-button color="warn" type="button" (click)="inspectionForm.reset()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

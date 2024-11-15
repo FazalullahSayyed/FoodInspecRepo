@@ -1,0 +1,49 @@
+package com.example.demo.model;
+
+public class MappingDTO {
+    private Long id;
+    private String schoolName;
+    private String assignDate;
+    private String inspectorName;
+    private String schoolAddress;  // Add this field
+    private String schoolContact;  // Add this field
+
+    public MappingDTO(Long id, String schoolName, String assignDate, String inspectorName, String schoolAddress,
+			String schoolContact) {
+		super();
+		this.id = id;
+		this.schoolName = schoolName;
+		this.assignDate = assignDate;
+		this.inspectorName = inspectorName;
+		this.schoolAddress = schoolAddress;
+		this.schoolContact = schoolContact;
+	}
+	public String getSchoolAddress() {
+		return schoolAddress;
+	}
+	public void setSchoolAddress(String schoolAddress) {
+		this.schoolAddress = schoolAddress;
+	}
+	public String getSchoolContact() {
+		return schoolContact;
+	}
+	public void setSchoolContact(String schoolContact) {
+		this.schoolContact = schoolContact;
+	}
+	// Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getSchoolName() { return schoolName; }
+    public void setSchoolName(String schoolName) { this.schoolName = schoolName; }
+
+    public String getAssignDate() { return assignDate; }
+    public void setAssignDate(String assignDate) { this.assignDate = assignDate; }
+
+    public String getInspectorName() { return inspectorName; }
+    public void setInspectorName(String inspectorName) { this.inspectorName = inspectorName; }
+
+  
+
+    public MappingDTO() { super();}
+}

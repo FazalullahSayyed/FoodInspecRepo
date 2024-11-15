@@ -1,0 +1,37 @@
+package com.example.demo.model;
+public class SchoolDetailsDTO {
+	private long schoolId;
+    private String schoolName;
+    private String address;
+    private String contactNumber;
+    private String assignDate;
+
+    // Constructor
+  
+    // Getters and Setters
+    public String getSchoolName() { return schoolName; }
+    public long getSchoolId() {
+		return schoolId;
+	}
+	public void setSchoolId(long schoolId) {
+		this.schoolId = schoolId;
+	}
+	public SchoolDetailsDTO(long schoolId, String schoolName, String address, String contactNumber, String assignDate) {
+		super();
+		this.schoolId = schoolId;
+		this.schoolName = schoolName;
+		this.address = address;
+		this.contactNumber = contactNumber;
+		this.assignDate = assignDate;
+	}
+	public void setSchoolName(String schoolName) { this.schoolName = schoolName; }
+
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
+
+    public String getContactNumber() { return contactNumber; }
+    public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
+
+    public String getAssignDate() { return assignDate; }
+    public void setAssignDate(String assignDate) { this.assignDate = assignDate; }
+}

@@ -1,0 +1,86 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Inspec;
+import com.example.demo.model.School;
+import com.example.demo.model.User;
+import com.example.demo.repository.InspecRepository;
+import com.example.demo.repository.SchoolRepository;
+import com.example.demo.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+@Service
+public class InspecService {
+
+    private static final Logger LOGGER = Logger.getLogger(InspecService.class.getName());
+
+    @Autowired
+    private InspecRepository inspecRepository;
+
+    @Autowired
+    private SchoolRepository schoolRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    public Inspec createInspec(Inspec inspec, Long inspectorId, Long schoolId, MultipartFile file) throws IOException {
+        Optional<User> userOpt = userRepository.findById(inspectorId);
+        Optional<School> schoolOpt = schoolRepository.findById(schoolId);
+
+        if (userOpt.isPresent() && schoolOpt.isPresent()) {
+            inspec.setUser(userOpt.get());
+            inspec.setSchool(schoolOpt.get());
+            
+            if (file != null) {
+                inspec.setFileName(file.getOriginalFilename());
+                inspec.setFileType(file.getContentType());
+                inspec.setFileSize(file.getSize());
+                inspec.setFileData(file.getBytes());
+            }
+            
+            Inspec savedInspec = inspecRepository.save(inspec);
+            LOGGER.info("Inspec created with ID: " + savedInspec.getId());
+            return savedInspec;
+        } else {
+            String errorMessage = "User or School not found with ID - User: " + inspectorId + ", School: " + schoolId;
+            LOGGER.severe(errorMessage);
+            throw new RuntimeException(errorMessage);
+        }
+    }
+
+    public List<Inspec> getAllInspecs() {
+        return inspecRepository.findAll();
+    }
+
+    public Optional<Inspec> getInspecById(Long id) {
+        return inspecRepository.findById(id);
+    }
+
+    public List<Inspec> getAllInspecsByUserAndSchool(Long userId, Long schoolId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with ID: " + userId));
+        School school = schoolRepository.findById(schoolId)
+                .orElseThrow(() -> new RuntimeException("School not found with ID: " + schoolId));
+
+        return inspecRepository.findByUserAndSchool(user, school);
+    }
+
+    public void deleteInspecById(Long id) {
+        if (inspecRepository.existsById(id)) {
+            inspecRepository.deleteById(id);
+            LOGGER.info("Deleted Inspec with ID: " + id);
+        } else {
+            LOGGER.warning("Attempt to delete non-existent Inspec with ID: " + id);
+        }
+    }
+    public void deleteInspectionsByUserAndSchool(Long userId, Long schoolId) {
+        inspecRepository.deleteByInspectorIdAndSchoolId(userId, schoolId);
+    }
+}
